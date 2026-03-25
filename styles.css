@@ -107,7 +107,7 @@ header h1 {
 
 .car-category {
     font-size: 0.85rem;
-    color: #4fc3f7;
+    color: #c8a84e;
     margin-bottom: 12px;
     font-weight: 500;
 }
@@ -164,7 +164,7 @@ header h1 {
 .car-price {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4fc3f7;
+    color: #c8a84e;
 }
 
 .car-description {
@@ -189,7 +189,7 @@ header h1 {
 }
 
 .swiper-pagination-bullet-active {
-    background: #4fc3f7;
+    background: #c8a84e;
 }
 
 /* Contact button */
@@ -197,7 +197,7 @@ header h1 {
     display: inline-block;
     margin-top: 14px;
     padding: 10px 24px;
-    background: #4fc3f7;
+    background: #c8a84e;
     color: #000;
     border: none;
     border-radius: 12px;
@@ -210,7 +210,7 @@ header h1 {
 }
 
 .contact-btn:hover {
-    background: #39b0e0;
+    background: #b8952f;
 }
 
 .contact-btn.disabled {
