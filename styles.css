@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0f0f0f;
+    color: #fff;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    text-align: center;
+    padding: 20px 16px 8px;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 4px;
+}
+
+/* Swiper */
+.swiper {
+    width: 100%;
+    height: calc(100vh - 120px);
+    padding: 10px 0;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Car Card */
+.car-card {
+    width: 90%;
+    max-width: 380px;
+    background: #1a1a1a;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.car-image-wrapper {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    position: relative;
+}
+
+.car-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Availability Badge */
+.badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge.available {
+    background: #00c853;
+    color: #fff;
+}
+
+.badge.sold {
+    background: #ff1744;
+    color: #fff;
+}
+
+.badge.reserved {
+    background: #ff9100;
+    color: #fff;
+}
+
+/* Card Info */
+.car-info {
+    padding: 20px;
+}
+
+.car-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.car-category {
+    font-size: 0.85rem;
+    color: #4fc3f7;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.tag-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    backdrop-filter: blur(4px);
+}
+
+.car-equipment {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.car-equipment li {
+    font-size: 0.72rem;
+    color: #bbb;
+    background: #262626;
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+
+.car-details {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+.detail-icon {
+    font-size: 1rem;
+}
+
+.car-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #4fc3f7;
+}
+
+.car-description {
+    font-size: 0.82rem;
+    color: #999;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+/* Counter */
+.counter {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Swiper pagination */
+.swiper-pagination-bullet {
+    background: #555;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #4fc3f7;
+}
+
+/* Contact button */
+.contact-btn {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 24px;
+    background: #4fc3f7;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-btn:hover {
+    background: #39b0e0;
+}
+
+.contact-btn.disabled {
+    background: #333;
+    color: #666;
+    pointer-events: none;
+}
