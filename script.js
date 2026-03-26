@@ -7,13 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const slide = document.createElement("div");
         slide.className = "swiper-slide";
 
-        const statusLabel =
-            car.status === "available" ? "Disponible"
-            : car.status === "sold" ? "Vendu"
-            : "Réservé";
-
-        const btnClass = car.status === "available" ? "contact-btn" : "contact-btn disabled";
-        const btnText  = car.status === "available" ? "Réserver maintenant" : statusLabel;
+        const statusLabel = "Disponible";
 
         const equipmentHTML = car.equipment
             ? car.equipment.map(e => `<li>${e}</li>`).join("")
@@ -23,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="car-card">
                 <div class="car-image-wrapper">
                     <img src="${car.image}" alt="${car.name}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22260%22><rect fill=%22%23222%22 width=%22400%22 height=%22260%22/><text fill=%22%23555%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2218%22>No Image</text></svg>'">
-                    <span class="badge ${car.status}">${statusLabel}</span>
+                    <span class="badge available">${statusLabel}</span>
                     <span class="tag-badge">${car.tag}</span>
                 </div>
                 <div class="car-info">
@@ -38,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="car-price">${car.price}</div>
                     <ul class="car-equipment">${equipmentHTML}</ul>
                     <p class="car-description">${car.description}</p>
-                    <a class="${btnClass}" href="#">${btnText}</a>
+
                 </div>
             </div>
         `;
