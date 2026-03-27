@@ -28,7 +28,7 @@ const cars = [
         price: "375 € / semaine",
         status: "available",
         image: "images/suzuki-swace.png",
-        description: "Assurance pro + tous risques, kilométrage illimité, entretien complet, aucun dépôt de caution, assistance 24/7"
+        description: "Aucun dépôt de caution, kilométrage illimité, Assurance pro + tous risques, entretien complet, assistance 24/7"
     },
     {
         name: "Toyota Corolla",
@@ -46,7 +46,7 @@ const cars = [
         price: "375 € / semaine",
         status: "available",
         image: "images/toyota-corolla.png",
-        description: "Assurance pro + tous risques, kilométrage illimité, aucun dépôt de caution, assistance 24/7"
+        description: "Aucun dépôt de caution, kilométrage illimité, Assurance pro + tous risques, entretien complet, assistance 24/7"
     },
     {
         name: "Hyundai Kona",
@@ -65,7 +65,7 @@ const cars = [
         price: "375 € / semaine",
         status: "available",
         image: "images/hyundai-kona.png",
-        description: "Assurance pro + tous risques, kilométrage illimité, entretien complet, aucun dépôt de caution, assistance 24/7"
+        description: "Aucun dépôt de caution, kilométrage illimité, Assurance pro + tous risques, entretien complet, assistance 24/7"
     },
     {
         name: "Toyota bZ4X",
@@ -84,7 +84,7 @@ const cars = [
         price: "400 € / semaine",
         status: "available",
         image: "images/toyota-bz4x.png",
-        description: "Assurance pro + tous risques, kilométrage illimité, entretien complet, aucun dépôt de caution, assistance 24/7"
+        description: "Aucun dépôt de caution, kilométrage illimité, Assurance pro + tous risques, entretien complet, assistance 24/7"
     },
     {
         name: "Kia EV3",
@@ -103,7 +103,7 @@ const cars = [
         price: "400 € / semaine",
         status: "available",
         image: "images/kia-ev3.png",
-        description: "Assurance pro + tous risques, kilométrage illimité, entretien complet, aucun dépôt de caution, assistance 24/7"
+        description: "Aucun dépôt de caution, kilométrage illimité, Assurance pro + tous risques, entretien complet, assistance 24/7"
     },
     {
         name: "Toyota Camry",
@@ -123,7 +123,7 @@ const cars = [
         price: "400 € / semaine",
         status: "available",
         image: "images/toyota-camry.png",
-        description: "Assurance pro + tous risques, kilométrage illimité, entretien complet, aucun dépôt de caution, assistance 24/7"
+        description: "Aucun dépôt de caution, kilométrage illimité, Assurance pro + tous risques, entretien complet, assistance 24/7"
     },
     {
         name: "BYD Seal",
@@ -143,7 +143,7 @@ const cars = [
         price: "425 € / semaine",
         status: "available",
         image: "images/byd-seal.png",
-        description: "Assurance pro + tous risques, kilométrage illimité, entretien complet, aucun dépôt de caution, assistance 24/7"
+        description: "Aucun dépôt de caution, kilométrage illimité, Assurance pro + tous risques, entretien complet, assistance 24/7"
     },
     {
         name: "Tesla Model Y",
@@ -162,7 +162,7 @@ const cars = [
         price: "450 € / semaine",
         status: "available",
         image: "images/tesla-model-y.png",
-        description: "Assurance pro + tous risques, kilométrage illimité, entretien complet, aucun dépôt de caution, assistance 24/7"
+        description: "Aucun dépôt de caution, kilométrage illimité, Assurance pro + tous risques, entretien complet, assistance 24/7"
     },
     {
         name: "Tesla Model 3",
@@ -181,7 +181,7 @@ const cars = [
         price: "450 € / semaine",
         status: "available",
         image: "images/tesla-model-3.png",
-        description: "Assurance pro + tous risques, kilométrage illimité, entretien complet, aucun dépôt de caution, assistance 24/7"
+        description: "Aucun dépôt de caution, kilométrage illimité, Assurance pro + tous risques, entretien complet, assistance 24/7"
     },
     {
         name: "Kia EV6",
@@ -200,7 +200,7 @@ const cars = [
         price: "450 € / semaine",
         status: "available",
         image: "images/kia-ev6.png",
-        description: "Assurance pro + tous risques, kilométrage illimité, entretien complet, aucun dépôt de caution, assistance 24/7"
+        description: "Aucun dépôt de caution, kilométrage illimité, Assurance pro + tous risques, entretien complet, assistance 24/7"
     },
     {
         name: "Hyundai Staria",
@@ -221,6 +221,6 @@ const cars = [
         price: "550 € / semaine",
         status: "available",
         image: "images/hyundai-staria.png",
-        description: "Assurance pro + tous risques, kilométrage illimité, entretien complet, aucun dépôt de caution, assistance 24/7"
+        description: "Aucun dépôt de caution, kilométrage illimité, Assurance pro + tous risques, entretien complet, assistance 24/7"
     },
 ];
