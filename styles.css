@@ -145,16 +145,16 @@ header h1 {
 
 .car-details {
     display: flex;
-    gap: 16px;
+    gap: 8px 14px;
     flex-wrap: wrap;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .detail {
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: #ccc;
 }
 
