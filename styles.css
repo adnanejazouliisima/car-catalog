@@ -97,7 +97,7 @@ header h1 {
 
 /* Card Info */
 .car-info {
-    padding: 20px;
+    padding: 12px 20px 16px;
 }
 
 .car-name {
@@ -109,7 +109,7 @@ header h1 {
 .car-category {
     font-size: 0.85rem;
     color: #c8a84e;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
     font-weight: 500;
 }
 
@@ -129,7 +129,7 @@ header h1 {
 .car-equipment {
     list-style: none;
     padding: 0;
-    margin: 10px 0;
+    margin: 4px 0;
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
@@ -147,7 +147,7 @@ header h1 {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
 }
 
 .detail {
