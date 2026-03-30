@@ -140,7 +140,7 @@ const cars = [
             "Régulateur adaptatif",
             "Toit panoramique"
         ],
-        price: "425 € / semaine",
+        price: "450 € / semaine",
         status: "available",
         image: "images/byd-seal.png",
         description: "Aucun dépôt de caution, kilométrage illimité, Assurance pro + tous risques, entretien complet, assistance 24/7"
