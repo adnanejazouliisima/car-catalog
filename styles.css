@@ -9,31 +9,33 @@ body {
     background: #0f0f0f;
     color: #fff;
     min-height: 100vh;
+    min-height: 100dvh;
     overflow: hidden;
 }
 
 header {
     text-align: center;
-    padding: 20px 16px 8px;
+    padding: 10px 16px 4px;
 }
 
 header h1 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
 .subtitle {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: #888;
-    margin-top: 4px;
+    margin-top: 2px;
 }
 
 /* Swiper */
 .swiper {
     width: 100%;
-    height: calc(100vh - 120px);
-    padding: 10px 0;
+    height: calc(100vh - 90px);
+    height: calc(100dvh - 90px);
+    padding: 4px 0;
 }
 
 .swiper-slide {
@@ -55,7 +57,7 @@ header h1 {
 
 .car-image-wrapper {
     width: 100%;
-    height: 260px;
+    height: 220px;
     overflow: visible;
     position: relative;
 }
@@ -97,19 +99,19 @@ header h1 {
 
 /* Card Info */
 .car-info {
-    padding: 12px 20px 16px;
+    padding: 10px 18px 14px;
 }
 
 .car-name {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .car-category {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #c8a84e;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     font-weight: 500;
 }
 
@@ -163,23 +165,23 @@ header h1 {
 }
 
 .car-price {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: #c8a84e;
 }
 
 .car-description {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     color:  #c8a84e;
-    line-height: 1.5;
+    line-height: 1.4;
     margin-top: 2px;
 }
 
 /* Counter */
 .counter {
     text-align: center;
-    padding: 10px;
-    font-size: 0.85rem;
+    padding: 4px;
+    font-size: 0.8rem;
     color: #666;
 }
 
@@ -196,14 +198,14 @@ header h1 {
 /* Contact button */
 .contact-btn {
     display: inline-block;
-    margin-top: 8px;
-    padding: 8px 24px;
+    margin-top: 6px;
+    padding: 9px 24px;
     background: #c8a84e;
     color: #000;
     border: none;
     border-radius: 12px;
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     text-decoration: none;
     width: 100%;
