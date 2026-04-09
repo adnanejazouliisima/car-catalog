@@ -80,49 +80,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ============================================
-    // Google Forms submission
+    // Google Forms submission via hidden iframe
+    // The form posts directly via the browser to a hidden iframe,
+    // which avoids CORS issues and works exactly like a standard form post.
     // ============================================
-    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe-K-F2vcDSnGV5sG3miH2qeJ48csBOTnnxpjSBMxJYLtF15w/formResponse";
-    const GOOGLE_FIELDS = {
-        prenom:    "entry.349062347",
-        nom:       "entry.299678161",
-        telephone: "entry.1030378852",
-        vehicule:  "entry.1385620102",
-        moment:    "entry.1688362165",
-    };
+    let isSubmitting = false;
+    const submitBtn = contactForm.querySelector(".form-submit");
 
-    contactForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const submitBtn = contactForm.querySelector(".form-submit");
+    contactForm.addEventListener("submit", () => {
+        // Let the native form submission happen via the iframe target.
+        // We just update the UI here.
+        isSubmitting = true;
         submitBtn.disabled = true;
         submitBtn.textContent = "Envoi…";
-
-        // Map our field names to Google Form entry IDs
-        const params = new URLSearchParams();
-        const data = new FormData(contactForm);
-        for (const [name, entryId] of Object.entries(GOOGLE_FIELDS)) {
-            params.append(entryId, data.get(name) || "");
-        }
-
-        try {
-            // Google Forms blocks CORS responses, but the submission still goes through.
-            // Using mode: "no-cors" so the fetch resolves successfully.
-            await fetch(GOOGLE_FORM_URL, {
-                method: "POST",
-                mode: "no-cors",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: params.toString(),
-            });
-            contactForm.style.display = "none";
-            successMsg.style.display = "block";
-            setTimeout(closeModal, 2500);
-        } catch (err) {
-            alert("Erreur lors de l'envoi. Réessayez.");
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Envoyer";
-        }
     });
+
+    // Called when the hidden iframe finishes loading after the POST.
+    // Google's response is opaque to us, but iframe load = submission completed.
+    window.googleFormSubmitted = function () {
+        if (!isSubmitting) return; // ignore initial blank load
+        isSubmitting = false;
+        contactForm.style.display = "none";
+        successMsg.style.display = "block";
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Envoyer";
+        setTimeout(closeModal, 2500);
+    };
 
     // Init Swiper
     const swiper = new Swiper(".swiper", {

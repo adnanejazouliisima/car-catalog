@@ -22,6 +22,9 @@
 
     <div class="counter" id="counter">1 / 0</div>
 
+    <!-- Hidden iframe target for Google Forms submission (avoids CORS issues) -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="window.googleFormSubmitted && window.googleFormSubmitted()"></iframe>
+
     <!-- Modal contact form (submits to Google Forms) -->
     <div class="modal-overlay" id="modal-overlay">
         <div class="modal">
@@ -29,30 +32,36 @@
             <h2 class="modal-title">Être recontacté</h2>
             <p class="modal-subtitle">Laissez vos coordonnées, on vous rappelle rapidement.</p>
 
-            <form class="contact-form" id="contact-form">
+            <form
+                class="contact-form"
+                id="contact-form"
+                action="https://docs.google.com/forms/d/e/1FAIpQLSe-K-F2vcDSnGV5sG3miH2qeJ48csBOTnnxpjSBMxJYLtF15w/formResponse"
+                method="POST"
+                target="hidden_iframe"
+            >
                 <label class="form-label">
                     Prénom
-                    <input type="text" name="prenom" required autocomplete="given-name" />
+                    <input type="text" name="entry.349062347" required autocomplete="given-name" />
                 </label>
 
                 <label class="form-label">
                     Nom
-                    <input type="text" name="nom" required autocomplete="family-name" />
+                    <input type="text" name="entry.299678161" required autocomplete="family-name" />
                 </label>
 
                 <label class="form-label">
                     Téléphone
-                    <input type="tel" name="telephone" required autocomplete="tel" placeholder="06 12 34 56 78" />
+                    <input type="tel" name="entry.1030378852" required autocomplete="tel" placeholder="06 12 34 56 78" />
                 </label>
 
                 <label class="form-label">
                     Véhicule qui m'intéresse
-                    <input type="text" name="vehicule" id="vehicule-field" readonly />
+                    <input type="text" name="entry.1385620102" id="vehicule-field" readonly />
                 </label>
 
                 <label class="form-label">
                     Meilleur moment pour vous rappeler
-                    <input type="text" name="moment" placeholder="Ex : matin, après-midi, soir…" />
+                    <input type="text" name="entry.1688362165" placeholder="Ex : matin, après-midi, soir…" />
                 </label>
 
                 <button type="submit" class="form-submit">Envoyer</button>
