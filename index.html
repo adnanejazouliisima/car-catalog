@@ -22,6 +22,50 @@
 
     <div class="counter" id="counter">1 / 0</div>
 
+    <!-- Modal contact form (submits to Google Forms) -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" id="modal-close" aria-label="Fermer">&times;</button>
+            <h2 class="modal-title">Être recontacté</h2>
+            <p class="modal-subtitle">Laissez vos coordonnées, on vous rappelle rapidement.</p>
+
+            <form class="contact-form" id="contact-form">
+                <label class="form-label">
+                    Prénom
+                    <input type="text" name="prenom" required autocomplete="given-name" />
+                </label>
+
+                <label class="form-label">
+                    Nom
+                    <input type="text" name="nom" required autocomplete="family-name" />
+                </label>
+
+                <label class="form-label">
+                    Téléphone
+                    <input type="tel" name="telephone" required autocomplete="tel" placeholder="06 12 34 56 78" />
+                </label>
+
+                <label class="form-label">
+                    Véhicule qui m'intéresse
+                    <input type="text" name="vehicule" id="vehicule-field" readonly />
+                </label>
+
+                <label class="form-label">
+                    Meilleur moment pour vous rappeler
+                    <input type="text" name="moment" placeholder="Ex : matin, après-midi, soir…" />
+                </label>
+
+                <button type="submit" class="form-submit">Envoyer</button>
+            </form>
+
+            <div class="form-success" id="form-success">
+                <div class="form-success-icon">&#10003;</div>
+                <h3>Merci !</h3>
+                <p>Nous vous rappellerons très bientôt.</p>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="cars.js"></script>
     <script src="script.js"></script>

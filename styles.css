@@ -219,3 +219,162 @@ header h1 {
     color: #666;
     pointer-events: none;
 }
+
+/* ============================================
+   Contact Modal
+   ============================================ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 20px;
+    padding: 28px 24px 24px;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+    animation: modalIn 0.25s ease-out;
+}
+
+@keyframes modalIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 1.8rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 10px;
+}
+
+.modal-close:hover {
+    color: #fff;
+}
+
+.modal-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.modal-subtitle {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 18px;
+}
+
+/* Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hp-field {
+    display: none;
+}
+
+.form-label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.78rem;
+    color: #c8a84e;
+    font-weight: 600;
+    gap: 5px;
+}
+
+.form-label input {
+    background: #0f0f0f;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 11px 14px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.form-label input:focus {
+    border-color: #c8a84e;
+}
+
+.form-label input[readonly] {
+    color: #888;
+    cursor: not-allowed;
+}
+
+.form-submit {
+    margin-top: 6px;
+    padding: 13px 20px;
+    background: #c8a84e;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.form-submit:hover:not(:disabled) {
+    background: #b8952f;
+}
+
+.form-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Success state */
+.form-success {
+    display: none;
+    text-align: center;
+    padding: 20px 0 10px;
+}
+
+.form-success-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #00c853;
+    color: #fff;
+    font-size: 2rem;
+    line-height: 60px;
+    margin: 0 auto 14px;
+    font-weight: 700;
+}
+
+.form-success h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.form-success p {
+    font-size: 0.9rem;
+    color: #888;
+}

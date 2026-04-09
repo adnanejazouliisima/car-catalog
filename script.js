@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const catalog = document.getElementById("catalog");
     const counter = document.getElementById("counter");
-
+    
     // Build cards
     cars.forEach((car) => {
         const slide = document.createElement("div");
@@ -32,12 +32,96 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="car-price">${car.price}</div>
                     <ul class="car-equipment">${equipmentHTML}</ul>
                     <p class="car-description">${car.description}</p>
-
+                    <button type="button" class="contact-btn" data-car="${car.name}">Je suis intéressé</button>
                 </div>
             </div>
         `;
 
         catalog.appendChild(slide);
+    });
+
+    // ============================================
+    // Contact form modal
+    // ============================================
+    const overlay = document.getElementById("modal-overlay");
+    const closeBtn = document.getElementById("modal-close");
+    const vehiculeField = document.getElementById("vehicule-field");
+    const contactForm = document.getElementById("contact-form");
+    const successMsg = document.getElementById("form-success");
+
+    function openModal(carName) {
+        vehiculeField.value = carName || "";
+        overlay.classList.add("active");
+        contactForm.style.display = "";
+        successMsg.style.display = "none";
+        contactForm.reset();
+        vehiculeField.value = carName || "";
+    }
+
+    function closeModal() {
+        overlay.classList.remove("active");
+    }
+
+    // Open modal on contact button click
+    catalog.addEventListener("click", (e) => {
+        const btn = e.target.closest(".contact-btn");
+        if (btn) {
+            e.stopPropagation();
+            openModal(btn.dataset.car);
+        }
+    });
+
+    closeBtn.addEventListener("click", closeModal);
+    overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closeModal();
+    });
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+    });
+
+    // ============================================
+    // Google Forms submission
+    // ============================================
+    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe-K-F2vcDSnGV5sG3miH2qeJ48csBOTnnxpjSBMxJYLtF15w/formResponse";
+    const GOOGLE_FIELDS = {
+        prenom:    "entry.349062347",
+        nom:       "entry.299678161",
+        telephone: "entry.1030378852",
+        vehicule:  "entry.1385620102",
+        moment:    "entry.1688362165",
+    };
+
+    contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const submitBtn = contactForm.querySelector(".form-submit");
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Envoi…";
+
+        // Map our field names to Google Form entry IDs
+        const params = new URLSearchParams();
+        const data = new FormData(contactForm);
+        for (const [name, entryId] of Object.entries(GOOGLE_FIELDS)) {
+            params.append(entryId, data.get(name) || "");
+        }
+
+        try {
+            // Google Forms blocks CORS responses, but the submission still goes through.
+            // Using mode: "no-cors" so the fetch resolves successfully.
+            await fetch(GOOGLE_FORM_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: params.toString(),
+            });
+            contactForm.style.display = "none";
+            successMsg.style.display = "block";
+            setTimeout(closeModal, 2500);
+        } catch (err) {
+            alert("Erreur lors de l'envoi. Réessayez.");
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Envoyer";
+        }
     });
 
     // Init Swiper
